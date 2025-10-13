@@ -1,0 +1,15 @@
+Vive la musica con UdeATunes
+Como se puede apreciar en el documento es un sitema de streaming musical, 
+que nos sirve para gestionar canciones, artistas, albumes y usuarios dentro de esta 
+plataforma digital UdeATunes.
+los usuarios pueden tener diferentes tipos de membresias que cumplen con ciertos beneficios establecidos en el documento
+los premium obtienen beneficios especiales, mientras que los usuarios estándar aquellos que no pagan nada 
+tendran mensajes publicitarios cada dos cancione segun la categoria(C,B,AAA) 
+y no debe ser el mismo mensaje.
+Los artistas en este programa cumplen un papel muy importante ya que gracias a ellos esta el catalogo de musica 
+y atrae a los usuarios.
+Cada artista tiene uno o mas albumes, y estos tienen clasificacion de genero y los usuarios podran puntuarla
+asi mismo cada cancion tendra registro de reproduccion , y habra una seccion llamada creditos, estos se organizan 
+en tres grupos: Productores, Músicos y Compositores cada uno con un código alfanumerico  de diez caracteres
+Por ultimo, de manera simbolica en formatos ".ogg" en rutas estilo linux se representaran los archivos de audios.
+son cadenas de textos simulando la ubicacion dentro del sistema no son reales (eso entendi)
