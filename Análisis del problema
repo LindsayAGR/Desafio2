@@ -12,4 +12,12 @@ Cada artista tiene uno o mas albumes, y estos tienen clasificacion de genero y l
 asi mismo cada cancion tendra registro de reproduccion , y habra una seccion llamada creditos, estos se organizan 
 en tres grupos: Productores, Músicos y Compositores cada uno con un código alfanumerico  de diez caracteres
 Por ultimo, de manera simbolica en formatos ".ogg" en rutas estilo linux se representaran los archivos de audios.
-son cadenas de textos simulando la ubicacion dentro del sistema no son reales (eso entendi)
+son cadenas de textos simulando la ubicacion dentro del sistema no son reales (eso entendi) 
+
+Para mayor organizacion realizare archivos .txt para tener oranizados y sea mas ordenado y facil a mi parecer
+para el de las canciones.txt tendra sus respectivos id, nombre,artista, album, duracion, ruta
+para el de usuarios.txt tendran su nickname (nombre de usuario único), tipo de membresía (estándar/premium),
+ciudad, país y  fecha de inscripción en la plataforma.
+Y para los artistas con su respectivo código identificador, edad, país de origen, cantidad de
+seguidores en la plataforma y posición actual en la lista de tendencias global
+(Aun pienso si hare para cada artista con su album y asi seria, el de album artistas y cancion juntos dependiendo del artista, y el de usuarios si juntos)
