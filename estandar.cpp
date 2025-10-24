@@ -52,5 +52,41 @@ void estandar::repoducirCanciones(){
         if (contador% 2==0){
             mostrarPublicidad();
         }
+         cout <<"\n-----------------------------------\n";
+        cout<<"Cantante: "<<artista<<endl;
+        cout<<"Album: " <<album <<endl;
+        cout<<"Ruta del archivo de audio: "<<rutabase<<endl;
+        cout<<"Duracion: "<<duracion<<endl;
+        cout<<"\nOpciones: "<<endl;
+        cout << "1. Reproducir" << endl;
+        cout << "2. Detener" << endl;
+    }
+    archivo.close();
         
+    }
+//Mostrar publicidad
+    void estandar::mostrarPublicidad(){
+        ifstream archivo("Publicidad.txt")
+        if(!archivo){
+           cout"No se pudo abrir el archivo"<<endl;
+            return;
+        }
+        
+        char linea[200];
+        
+        // lee una línea del archivo (la siguiente publicidad)
+        if (archivo.getline(linea, 200)) {
+            // Categoría|Mensaje;
+            char* categoria = strtok(linea, "|");
+            char* mensaje = strtok(NULL, ";");
+            
+            cout << "\n--- PUBLICIDAD ---" << endl;
+            cout << "Mensaje publicitario: " << mensaje << endl;
+            cout << "Categoría: " << categoria << endl;
+            cout << "------------------" << endl;
+        }
+        
+        archivo.close();
+    }
+}       
         
