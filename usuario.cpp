@@ -52,3 +52,35 @@ bool usuario::buscarUsu(const char* nickname, const char* contrasena){
         return nullptr;
     }
 }
+
+
+
+char linea[200];//maximo 199 caracteres
+archivo.getline(linea, 200); // Saltar la primer linea
+
+while (archivo.getline(linea, 200)) {
+    // Lindsay|123alli|estandar;
+
+    char* token = strtok(linea, "|");
+    if (!token) continue;
+    char* TipUnickname = token;
+
+    token = strtok(nullptr, "|");
+    if (!token) continue;
+    char* TipUcontrasena = token;
+
+    token = strtok(nullptr, ";");
+    if (!token) continue;
+    char* TipUTipo = token;
+
+    if (strcmp(TipUnickname, nickname) == 0 && strcmp(TipUcontrasena, contrasena) == 0) {
+        archivo.close();
+        return new Usuario(TipUnickname TipUcontrasena, TipUTipo);
+    }
+}
+
+archivo.close();
+return nullptr; // No se encontró el usuario
+}
+
+
