@@ -57,7 +57,92 @@ void premium::EliminarFavoritos(int idCan){
             eliminado = true;
         }
     }
+    entrada.close();
+    temp.close();
     
+    remove("favoritos.txt");
+    rename("temp.txt", "favoritos.txt");
     
+    if (eliminado)
+        cout << "Canción con ID " << idCan << " eliminada de favoritos." << endl;
+    else
+        cout << "La canción no estaba en favoritos." << endl;
+}
+    //seguir otra lista o usuario
+void premium::SeguirLista(const char* usuarioSeguido) {
+    delete[] siguiendo;
+    siguiendo = new char[strlen(usuarioSeguido) + 1];
+    strcpy(siguiendo, usuarioSeguido);
+    cout << "Ahora estás siguiendo a: " << siguiendo << endl;
+}
+//Reproducir canciones normales 
+void premium::ReproducirCan(bool OrdenAleatorio) {
+    ifstream archivo("canciones.txt");
+    if (!archivo) {
+        cout << "No se pudo abrir canciones.txt" << endl;
+        return;
+    }
+    
+    cout << "\n Reproduciendo canciones Premium ";
+    if (OrdenAleatorio)
+        cout << "en modo ALEATORIO\n";
+    else
+        cout << "en ORDEN normal\n";
+    
+    char linea[200];
+    archivo.getline(linea, 200); // saltar encabezado
+    
+    while (archivo.getline(linea, 200)) {
+        
+        char* token = strtok(linea, "|");
+        int id = atoi(token);
+        token = strtok(NULL, "|");
+        char* nombre = token;
+        token = strtok(NULL, "|");
+        char* artista = token;
+        token = strtok(NULL, "|");
+        char* album = token;
+        token = strtok(NULL, "|");
+        char* rutaPortada = token;
+        token = strtok(NULL, "|");
+        char* rutaAudio = token;
+        token = strtok(NULL, ";");
+        char* duracion = token;
+        
+        cout <<"\n-----------------------------------\n";
+        cout << "Cantante: " << artista << endl;
+        cout << "Álbum: " << album << endl;
+        cout << "Ruta a la portada: " << rutaPortada << endl;
+        cout << "Título: " << nombre << endl;
+        cout << "Ruta del audio: " << rutaAudio << endl;
+        cout << "Duración: " << duracion << endl;
+    }
+    
+    archivo.close();
+}
+//reproduccir favoritas
+void premium::ReproducirFavoritos(bool OrdenAleatorio) {
+    ifstream fav("favoritos.txt");
+    if (!fav) {
+        cout << "No tienes canciones favoritas aún." << endl;
+        return;
+    }
+    
+    int ids[100]; // guarda los ids favoritos
+    int total = 0;
+    char linea[20];
+    
+    while (fav.getline(linea, 20)) {
+        ids[total++] = atoi(linea);
+    }
+    fav.close();
+    
+    ifstream canciones("canciones.txt");
+    if (!canciones) {
+        cout << "No se pudo abrir el archivo" << endl;
+        return;
+    }
+
+   
     
 }
