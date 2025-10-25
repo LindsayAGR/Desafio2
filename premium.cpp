@@ -142,7 +142,50 @@ void premium::ReproducirFavoritos(bool OrdenAleatorio) {
         cout << "No se pudo abrir el archivo" << endl;
         return;
     }
+    cout << "\n Reproduciendo tus canciones favoritas ";
+    if (OrdenAleatorio)
+        cout << "(modo ALEATORIO)" << endl;
+    else
+        cout << "(modo NORMAL)" << endl;
 
-   
-    
+    char datos[200];
+    canciones.getline(datos, 200); // saltar encabezado
+
+    while (canciones.getline(datos, 200)) {
+        char* token = strtok(datos, "|");
+        int id = atoi(token);
+        token = strtok(NULL, "|");
+        char* nombre = token;
+        token = strtok(NULL, "|");
+        char* artista = token;
+        token = strtok(NULL, "|");
+        char* album = token;
+        token = strtok(NULL, "|");
+        char* rutaPortada = token;
+        token = strtok(NULL, "|");
+        char* rutaAudio = token;
+        token = strtok(NULL, ";");
+        char* duracion = token;
+
+        // verificar si el id está en los favoritos
+        for (int i = 0; i < total; i++) {
+            if (ids[i] == id) {
+                cout << "\n----------------------------------" << endl;
+                cout << "Cantante: " << artista << endl;
+                cout << "Álbum: " << album << endl;
+                cout << "Ruta a la portada: " << rutaPortada << endl;
+                cout << "Título: " << nombre << endl;
+                cout << "Ruta del audio: " << rutaAudio << endl;
+                cout << "Duración: " << duracion << endl;
+                break;
+            }
+        }
+    }
+
+    canciones.close();
 }
+
+//  Getters
+const char* premium::getSiguiendo() const { return siguiendo; }
+const char* premium::getFavoritos() const { return favoritos; }
+
