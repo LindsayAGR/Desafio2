@@ -9,7 +9,7 @@ premium::premium(const char* nickname, const char* contrasena, const char* tipo)
     : usuario(nickname,contrasena,tipo)
 {
     favoritos = new char[2]; strcpy(favortos, "");
-    siguiendo = new char[2]; strcpy(siguiendo, "")
+    siguiendo = new char[2]; strcpy(siguiendo, "");
 }
 
 
