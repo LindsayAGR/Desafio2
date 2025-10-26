@@ -10,6 +10,10 @@ premium::premium(const char* nickname, const char* contrasena, const char* tipo)
 {
     favoritos = new char[2]; strcpy(favortos, "");
     siguiendo = new char[2]; strcpy(siguiendo, "");
+    
+    cout<<"\n Ingrese la fecha de suscripcion de "<<nickname<<":"<<endl;
+    fechaSuscrip.pedirFecha();
+   
 }
 
 
@@ -183,6 +187,12 @@ void premium::ReproducirFavoritos(bool OrdenAleatorio) {
     }
 
     canciones.close();
+}
+
+void premium::mostrarFechasuscrip() const{
+    cout<<"fecha de suscriocion: ";
+    fechaSuscrip.mostrarFecha();
+    cout <<endl;
 }
 
 //  Getters
