@@ -2,6 +2,7 @@
 #define PREMIUM_H
 
 #include "usuario.h"
+#include "fecha.h"
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -11,6 +12,7 @@ class premium : public usuario {
 private:
     char* favoritos;
     char* siguiendo;
+    Fecha fechaSuscrip;
 public:
     premium(const char* nickname, const char* contrasena, const char* tipo);
     ~premium();
@@ -20,7 +22,8 @@ public:
     void SeguirLista(const char* usuario);
     void ReproducirCan(bool OrdenAleatorio);
     void ReproducirFavoritos(bool OrdenAleatorio);
-    
+
+    void mostarFechasuscrip() const;
     const char* getSiguiendo() const;
     const char* getFavoritos() const;
 };
