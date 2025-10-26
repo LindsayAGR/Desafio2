@@ -68,7 +68,7 @@ void estandar::repoducirCanciones(){
     void estandar::mostrarPublicidad(){
         ifstream archivo("Publicidad.txt")
         if(!archivo){
-           cout"No se pudo abrir el archivo"<<endl;
+           cout<<"No se pudo abrir el archivo"<<endl;
             return;
         }
         
