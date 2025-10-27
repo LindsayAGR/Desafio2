@@ -56,3 +56,82 @@ const char* cancion::getArtista() const { return artista; }
 const char* cancion::getAlbum() const { return album; }
 const char* cancion::getGenero() const { return genero; }
 int cancion::getDuracion() const { return duracion; }
+
+
+void cancion::cargarDesdeArchivo(ifstream &archivo){
+    char linea[200];
+    
+    if(archivo.get(linea,200))
+        
+        char* token = strtok(linea, "|");
+        if (!token) return;
+        id = atoi(token);
+    
+        token = strtok(NULL, "|");
+        strcpy(nomCan, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(artista, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(album, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(genero, token);
+    
+        token = strtok(NULL, ";");
+        duracion = atoi(token);
+    }
+}
+//mostrar info
+void cancion::mostrarInfo() const {
+    cout << "\n--------------------------------------\n";
+    cout << "ID: " << id << endl;
+    cout << "Nombre: " << nomCan << endl;
+    cout << "Artista: " << artista << endl;
+    cout << "Álbum: " << album << endl;
+    cout << "Género: " << genero << endl;
+    cout << "Duración: " << duracion << " min" << endl;
+    
+}
+
+void cancion::cargarDesdeArchivo(ifstream &archivo){
+    char linea[200];
+    
+    if(archivo.get(linea,200))
+        
+        char* token = strtok(linea, "|");
+        if (!token) return;
+        id = atoi(token);
+    
+        token = strtok(NULL, "|");
+        strcpy(nomCan, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(artista, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(album, token);
+    
+        token = strtok(NULL, "|");
+        strcpy(genero, token);
+    
+        token = strtok(NULL, ";");
+        duracion = atoi(token);
+    }
+}
+//mostrar info
+void cancion::mostrarInfo() const {
+    cout << "\n--------------------------------------\n";
+    cout << "ID: " << id << endl;
+    cout << "Nombre: " << nomCan << endl;
+    cout << "Artista: " << artista << endl;
+    cout << "Álbum: " << album << endl;
+    cout << "Género: " << genero << endl;
+    cout << "Duración: " << duracion << " min" << endl;
+    
+}
+
+
+
+
