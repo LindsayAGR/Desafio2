@@ -44,7 +44,7 @@ void publicidad::mostrarPublicidad() const {
 
 //cargar todas las punlicidades
 
-Publicidad* Publicidad::cargarPublicidades(int& publi) {
+publicidad* publicidad::cargarpublicidades(int& publi) {
     ifstream archivo("publicidad.txt");
     if (!archivo) {
         cout << "No se pudo abrir archivo" << endl;
