@@ -27,6 +27,7 @@ public:
     
     // Mostrar la fecha
     void mostrarFecha() const;
+    void pedirFecha();
 };
 
 #endif // FECHA_H
