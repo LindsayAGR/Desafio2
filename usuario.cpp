@@ -53,7 +53,7 @@ bool usuario::buscarUsu(const char* nickname, const char* contrasena){
     }
 }
 
-
+usuario* buscarUsu(const char* nickname, const char* contrasena){
 
 char linea[200];//maximo 199 caracteres
 archivo.getline(linea, 200); // Saltar la primer linea
